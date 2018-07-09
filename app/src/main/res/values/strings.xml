@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Dream Paisa</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="wallet">Wallet</string>
+    <string name="play_game">Play Game</string>
+    <string name="refer_and_earn">Refer and Earn</string>
+    <string name="empty_username_field">Username field is Empty</string>
+    <string name="empty_password_field">Password field is Empty</string>
+    <string name="empty_username_and_password">UserName or Password field is Empty</string>
+    <string name="username_or_password_incorrect">Username or password is in correct !</string>
+    <string name="earned_cash">Earned Cash</string>
+    <string name="cash_earned_from_playing_games">Cash earned from playing Games</string>
+    <string name="enter_email_or_username">Enter Email or Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="login">Login</string>
+    <string name="trouble_with_login">Trouble with Login</string>
+    <string name="spin_wheel">Spin Wheel</string>
+    <string name="coin_toss">Coin Toss</string>
+    <string name="hit_the_wicket">Hit the Wicket</string>
+    <string name="enter_user_name">Enter User Name</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="enter_last_name">Enter Last Name</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="do_you_have_a_referral_code">Do you have a referral code ?</string>
+    <string name="enter_referral_code">Enter Referral Code</string>
+    <string name="sign_in">Sign In</string>
+    <string name="redeem">Redeem</string>
+    <string name="offer_cash">Offer Cash</string>
+    <string name="cash_earned_from_offers">Cash earned from Offers</string>
+    <string name="redeem_cash">Redeem Cash</string>
+    <string name="cash_you_have_redeemed">Cash you have redeemed</string>
+    <string name="refer_cash">Refer Cash</string>
+    <string name="share_your_referral_code">Share Your Referral Code</string>
+    <string name="invite_friends">Invite friends</string>
+    <string name="your_referral_code">Your Referral Code</string>
+
+</resources>

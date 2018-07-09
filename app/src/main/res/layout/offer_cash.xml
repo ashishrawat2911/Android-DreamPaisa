@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="10dp"
+    android:background="#ffff"
+    android:paddingEnd="20dp"
+    android:paddingStart="20dp"
+    tools:showIn="@layout/fragment_wallet"
+    android:paddingTop="20dp">
+
+    <TextView
+        android:id="@+id/redeemCashTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="₹1000"
+        android:textColor="#000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/earnedCashDescTextView"
+        app:layout_constraintEnd_toEndOf="@+id/earnedCashDescTextView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/earnedCashDescTextView" />
+
+    <TextView
+        android:id="@+id/earnedCashTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/offer_cash"
+        android:textColor="#000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/earnedCashDescTextView"
+        app:layout_constraintEnd_toEndOf="@+id/earnedCashDescTextView"
+        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintStart_toStartOf="@+id/earnedCashDescTextView"
+        app:layout_constraintTop_toTopOf="@+id/redeemCashTextView"
+        app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/earnedCashDescTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="@string/cash_earned_from_offers"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>
+
