@@ -41,5 +41,11 @@
     <string name="share_your_referral_code">Share Your Referral Code</string>
     <string name="invite_friends">Invite friends</string>
     <string name="your_referral_code">Your Referral Code</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="wallet">Wallet</string>
+    <string name="networks">Networks</string>
+    <string name="refer_and_earn">Refer and Earn</string>
+    <string name="logout">Logout</string>
 
 </resources>
