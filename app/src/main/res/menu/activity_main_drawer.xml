@@ -6,18 +6,44 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:title="@string/home" />
-        <item
-            android:id="@+id/nav_profile"
 
-            android:title="@string/profile" />
+            android:title="@string/home" />
         <item
             android:id="@+id/nav_wallet"
 
             android:title="@string/wallet" />
         <item
+            android:id="@+id/nav_offers"
+
+            android:title="@string/best_offers" />
+        <item
+            android:id="@+id/nav_payment_request"
+
+            android:title="@string/payment_request" />
+        <item
+            android:id="@+id/nav_my_order"
+
+            android:title="@string/my_order" />
+        <item
             android:id="@+id/nav_networks"
+
             android:title="@string/networks" />
+        <item
+            android:id="@+id/nav_game"
+
+            android:title="@string/game" />
+        <item
+            android:id="@+id/nav_advertise_with_us"
+
+            android:title="@string/advertise_with_us" />
+        <item
+            android:id="@+id/nav_support"
+
+            android:title="@string/support" />
+        <item
+            android:id="@+id/nav_notification"
+
+            android:title="@string/notification" />
         <item
             android:id="@+id/nav_refer_and_earn"
 

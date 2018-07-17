@@ -27,7 +27,6 @@
     <string name="enter_user_name">Enter User Name</string>
     <string name="enter_first_name">Enter First Name</string>
     <string name="enter_last_name">Enter Last Name</string>
-    <string name="enter_password">Enter Password</string>
     <string name="enter_phone_number">Enter Phone Number</string>
     <string name="do_you_have_a_referral_code">Do you have a referral code ?</string>
     <string name="enter_referral_code">Enter Referral Code</string>
@@ -43,9 +42,22 @@
     <string name="your_referral_code">Your Referral Code</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
-    <string name="wallet">Wallet</string>
     <string name="networks">Networks</string>
-    <string name="refer_and_earn">Refer and Earn</string>
     <string name="logout">Logout</string>
+    <string name="payment_request">Payment Request</string>
+    <string name="game">Game</string>
+    <string name="my_order">My Order</string>
+    <string name="support">Support</string>
+    <string name="advertise_with_us">Advertise with us</string>
+    <string name="notification">Notification</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="products">Products</string>
+    <string name="best_offers">Best Offers</string>
+    <string name="daily_updates">Daily Updates</string>
+    <string name="my_networks">My Networks</string>
+    <string name="learn_to_use">Learn to use</string>
+
 
 </resources>

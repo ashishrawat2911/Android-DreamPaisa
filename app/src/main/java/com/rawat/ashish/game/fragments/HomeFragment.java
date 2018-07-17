@@ -7,10 +7,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
-
 import com.rawat.ashish.game.R;
 import com.rawat.ashish.game.adaptors.GameAdaptor;
 
@@ -35,9 +33,6 @@ public class HomeFragment extends Fragment {
         mViewPager = (ViewPager) view.findViewById(R.id.view_pager_fav);
         mViewPager.setAdapter(new GameAdaptor(getChildFragmentManager(), this));
         mSmartTabLayout.setViewPager(mViewPager);
-
         return view;
-
     }
-
 }

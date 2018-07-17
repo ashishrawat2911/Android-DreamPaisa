@@ -16,14 +16,21 @@ import android.view.MenuItem;
 
 import com.rawat.ashish.game.R;
 import com.rawat.ashish.game.constants.MyConstants;
+import com.rawat.ashish.game.fragments.AdvertiseWithUsFragment;
+import com.rawat.ashish.game.fragments.BestOffersFragment;
 import com.rawat.ashish.game.fragments.HomeFragment;
+import com.rawat.ashish.game.fragments.HomeMainFragment;
+import com.rawat.ashish.game.fragments.MainPlayEarnFragment;
+import com.rawat.ashish.game.fragments.MyOrderFragment;
 import com.rawat.ashish.game.fragments.NetworkFragment;
-import com.rawat.ashish.game.fragments.ProfileFragment;
+import com.rawat.ashish.game.fragments.NotificationFragment;
+import com.rawat.ashish.game.fragments.PaymentReportFragment;
 import com.rawat.ashish.game.fragments.ReferAndEarnFragment;
+import com.rawat.ashish.game.fragments.SupportFragment;
 import com.rawat.ashish.game.fragments.WalletFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, HomeMainFragment.OnButtonClickListener {
     Fragment fragment = null;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor sharedPreferencesEditor;
@@ -52,7 +59,7 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }  else {
             super.onBackPressed();
         }
     }
@@ -64,29 +71,59 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            fragment = new HomeFragment();
-            fragmentTransaction(fragment);
-        } else if (id == R.id.nav_networks) {
-            fragment = new NetworkFragment();
-            fragmentTransaction(fragment);
-        } else if (id == R.id.nav_wallet) {
-            fragment = new WalletFragment();
-            fragmentTransaction(fragment);
-        } else if (id == R.id.nav_profile) {
-            fragment = new ProfileFragment();
-            fragmentTransaction(fragment);
+        switch (id) {
+            case R.id.nav_home:
+                fragment = new HomeFragment();
+                fragmentTransaction(fragment);
+                break;
+            case R.id.nav_offers:
+                fragment = new BestOffersFragment();
+                fragmentTransaction(fragment);
+                break;
+            case R.id.nav_payment_request:
+                fragment = new PaymentReportFragment();
+                fragmentTransaction(fragment);
+                break;
+            case R.id.nav_my_order:
+                fragment = new MyOrderFragment();
+                fragmentTransaction(fragment);
+                break;
+            case R.id.nav_advertise_with_us:
+                fragment = new AdvertiseWithUsFragment();
+                fragmentTransaction(fragment);
+                break;
+            case R.id.nav_networks:
+                fragment = new NetworkFragment();
+                fragmentTransaction(fragment);
+                break;
+            case R.id.nav_support:
+                fragment = new SupportFragment();
+                fragmentTransaction(fragment);
+                break;
+            case R.id.nav_notification:
+                fragment = new NotificationFragment();
+                fragmentTransaction(fragment);
+                break;
+            case R.id.nav_wallet:
+                fragment = new WalletFragment();
+                fragmentTransaction(fragment);
+                break;
+            case R.id.nav_refer_and_earn:
+                fragment = new ReferAndEarnFragment();
+                fragmentTransaction(fragment);
+                break;
+            case R.id.nav_game:
+                fragment = new MainPlayEarnFragment();
+                fragmentTransaction(fragment);
+                break;
+            case R.id.nav_logout:
+                sharedPreferencesEditor = sharedPreferences.edit();
+                sharedPreferencesEditor.putBoolean(MyConstants.LOGGED_IN, false);
+                sharedPreferencesEditor.apply();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                finish();
 
-        } else if (id == R.id.nav_refer_and_earn) {
-            fragment = new ReferAndEarnFragment();
-            fragmentTransaction(fragment);
-        } else if (id == R.id.nav_logout) {
-            sharedPreferencesEditor = sharedPreferences.edit();
-            sharedPreferencesEditor.putBoolean(MyConstants.LOGGED_IN, false);
-            sharedPreferencesEditor.apply();
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
-            finish();
-
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -99,6 +136,29 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.nav_container, fragment);
             ft.commit();
+        }
+    }
+
+    @Override
+    public void onButtonSelected(int id) {
+        Fragment fragment = null;
+        switch (id) {
+            case 1:
+                fragment = new WalletFragment();
+                fragmentTransaction(fragment);
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+                fragment = new MainPlayEarnFragment();
+                fragmentTransaction(fragment);
+                break;
+            case 4:
+                fragment = new ReferAndEarnFragment();
+                fragmentTransaction(fragment);
+                break;
         }
     }
 }

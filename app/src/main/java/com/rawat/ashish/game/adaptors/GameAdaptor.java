@@ -1,15 +1,17 @@
 package com.rawat.ashish.game.adaptors;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.rawat.ashish.game.R;
+import com.rawat.ashish.game.fragments.BestOffersFragment;
+import com.rawat.ashish.game.fragments.DailyUpdateFragment;
 import com.rawat.ashish.game.fragments.HomeFragment;
-import com.rawat.ashish.game.fragments.WalletFragment;
+import com.rawat.ashish.game.fragments.HomeMainFragment;
 import com.rawat.ashish.game.fragments.MainPlayEarnFragment;
-import com.rawat.ashish.game.fragments.ReferAndEarnFragment;
+import com.rawat.ashish.game.fragments.NetworkFragment;
+import com.rawat.ashish.game.fragments.ProductsFragment;
 
 public class GameAdaptor extends FragmentPagerAdapter {
 
@@ -24,18 +26,23 @@ public class GameAdaptor extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new MainPlayEarnFragment();
+                return new HomeMainFragment();
             case 1:
-                return new ReferAndEarnFragment();
+                return new NetworkFragment();
             case 2:
-                return new WalletFragment();
+                return new ProductsFragment();
+            case 3:
+                return new BestOffersFragment();
+            case 4:
+                return new DailyUpdateFragment();
+
         }
         return null;
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 5;
     }
 
     @Override
@@ -43,11 +50,15 @@ public class GameAdaptor extends FragmentPagerAdapter {
         switch (position) {
 
             case 0:
-                return mContext.getResources().getString(R.string.play_game);
+                return mContext.getResources().getString(R.string.home);
             case 1:
-                return mContext.getResources().getString(R.string.refer_and_earn);
+                return mContext.getResources().getString(R.string.my_networks);
             case 2:
-                return mContext.getResources().getString(R.string.wallet);
+                return mContext.getResources().getString(R.string.products);
+            case 3:
+                return mContext.getResources().getString(R.string.best_offers);
+            case 4:
+                return mContext.getResources().getString(R.string.daily_updates);
 
         }
         return null;
