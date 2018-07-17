@@ -32,48 +32,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="@string/spin_wheel"
+                android:text="@string/spin_wheel_game"
                 android:textColor="#dd000000"
                 android:textSize="30sp" />
         </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_margin="10dp"
-            android:background="#ddba5531"
-            app:cardCornerRadius="15dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="205dp">
-
-            <TextView
-                android:id="@+id/main_coin_toss_text_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/coin_toss"
-                android:textColor="#dd000000"
-                android:textSize="30sp" />
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_margin="10dp"
-            android:background="#dd69e1e1"
-            app:cardCornerRadius="15dp"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="240dp">
-
-            <TextView
-                android:id="@+id/main_hit_wicket_text_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
-                android:gravity="center"
-                android:text="@string/hit_the_wicket"
-                android:textColor="#dd000000"
-                android:textSize="30sp" />
-        </android.support.v7.widget.CardView>
+            android:layout_height="match_parent"
+            android:src="@drawable/ads" />
     </LinearLayout>
 </ScrollView>

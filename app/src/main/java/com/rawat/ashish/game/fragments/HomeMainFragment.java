@@ -23,10 +23,6 @@ public class HomeMainFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public interface OnButtonClickListener {
-        void onButtonSelected(int id);
-    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -65,5 +61,9 @@ public class HomeMainFragment extends Fragment {
                 mCallback.onButtonSelected(id);
             }
         });
+    }
+
+    public interface OnButtonClickListener {
+        void onButtonSelected(int id);
     }
 }

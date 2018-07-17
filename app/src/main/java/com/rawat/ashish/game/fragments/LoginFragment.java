@@ -59,13 +59,12 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (Validate()) {
-                    startActivity(new Intent(getActivity(), MainActivity.class));
                     setUserIdSharedPreferences(true, "1");
-                   /* getLoginResponse(getStringFromEditText(loginEditText),
+                    getLoginResponse(getStringFromEditText(loginEditText),
                             getStringFromEditText(passwordEditText));
                     loginAlert.setText(null);
                     loadProgressBar();
-                */}
+                }
             }
         });
         return rootView;

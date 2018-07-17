@@ -21,7 +21,7 @@
     <string name="enter_password">Enter Password</string>
     <string name="login">Login</string>
     <string name="trouble_with_login">Trouble with Login</string>
-    <string name="spin_wheel">Spin Wheel</string>
+    <string name="spin_wheel_game">Play Spin Wheel</string>
     <string name="coin_toss">Coin Toss</string>
     <string name="hit_the_wicket">Hit the Wicket</string>
     <string name="enter_user_name">Enter User Name</string>

@@ -35,12 +35,14 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
     // Belong to login button in xml file
     public void login(View view) {
         fragment = new LoginFragment();
         fragmentTransaction(fragment);
         loginSignLinearLayout.setVisibility(View.GONE);
     }
+
     // Belong to sign in button in xml file
     public void signIn(View view) {
         fragment = new SignInFragment();
@@ -50,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-   private void fragmentTransaction(Fragment fragment) {
+    private void fragmentTransaction(Fragment fragment) {
         if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.loginAndSignContainer, fragment);

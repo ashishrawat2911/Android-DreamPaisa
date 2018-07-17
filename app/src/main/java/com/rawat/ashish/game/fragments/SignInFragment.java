@@ -137,6 +137,7 @@ public class SignInFragment extends Fragment {
                 startActivity(new Intent(getActivity(), MainActivity.class));
                 setEveryThingToDefault();
                 setUserIdSharedPreferences(userId);
+                getActivity().finish();
                 break;
         }
     }

@@ -9,7 +9,6 @@ import com.rawat.ashish.game.fragments.BestOffersFragment;
 import com.rawat.ashish.game.fragments.DailyUpdateFragment;
 import com.rawat.ashish.game.fragments.HomeFragment;
 import com.rawat.ashish.game.fragments.HomeMainFragment;
-import com.rawat.ashish.game.fragments.MainPlayEarnFragment;
 import com.rawat.ashish.game.fragments.NetworkFragment;
 import com.rawat.ashish.game.fragments.ProductsFragment;
 

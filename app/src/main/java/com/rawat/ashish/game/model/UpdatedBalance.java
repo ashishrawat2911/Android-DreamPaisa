@@ -3,7 +3,7 @@ package com.rawat.ashish.game.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Login {
+public class UpdatedBalance {
 
     @SerializedName("status")
     @Expose
@@ -11,9 +11,6 @@ public class Login {
     @SerializedName("result")
     @Expose
     private String result;
-    @SerializedName("user_id")
-    @Expose
-    private String userId;
 
     public String getStatus() {
         return status;
@@ -29,14 +26,6 @@ public class Login {
 
     public void setResult(String result) {
         this.result = result;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
     }
 
 }

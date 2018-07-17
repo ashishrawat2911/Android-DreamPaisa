@@ -12,7 +12,7 @@ import com.rawat.ashish.game.R;
 
 public class SpinWheelActivity extends AppCompatActivity {
     Toast toast;
-    ImageView spinWheelImageView,spinWheelAdImageView;
+    ImageView spinWheelImageView, spinWheelAdImageView;
     CountDownTimer adCountDownTimer, gifCountDownTimer;
 
     @Override

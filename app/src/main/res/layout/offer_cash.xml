@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginBottom="10dp"
     android:background="#ffff"
     android:paddingEnd="20dp"
     android:paddingStart="20dp"
-    tools:showIn="@layout/fragment_wallet"
-    android:paddingTop="20dp">
+    android:paddingTop="20dp"
+    tools:showIn="@layout/fragment_wallet">
 
     <TextView
         android:id="@+id/redeemCashTextView"
@@ -40,6 +40,7 @@
         app:layout_constraintStart_toStartOf="@+id/earnedCashDescTextView"
         app:layout_constraintTop_toTopOf="@+id/redeemCashTextView"
         app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/earnedCashDescTextView"
         android:layout_width="match_parent"

@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="150dp"
+    android:layout_marginBottom="10dp"
     android:background="#ffff"
     android:paddingEnd="20dp"
     android:paddingStart="20dp"
-    tools:showIn="@layout/fragment_wallet"
-    android:layout_marginBottom="10dp"
-    android:paddingTop="30dp">
+    android:paddingTop="30dp"
+    tools:showIn="@layout/fragment_wallet">
 
     <TextView
         android:id="@+id/referCashTextView"

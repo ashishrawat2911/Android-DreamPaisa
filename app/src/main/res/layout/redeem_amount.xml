@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="150dp"
+    android:layout_marginBottom="10dp"
     android:background="#ffff"
     android:paddingEnd="20dp"
-    android:layout_marginBottom="10dp"
     android:paddingStart="20dp"
     android:paddingTop="20dp"
     tools:showIn="@layout/fragment_wallet">
