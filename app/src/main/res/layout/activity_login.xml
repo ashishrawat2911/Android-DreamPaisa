@@ -1,52 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/loginAndSignContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.LoginActivity">
 
-    <LinearLayout
-        android:id="@+id/loginAndSignLinearLayout"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ads" />
-
-        <Button
-            android:layout_width="260dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:background="@drawable/blue_back"
-            android:onClick="login"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
-            android:text="Login"
-            android:textColor="#FFFF" />
-
-        <View
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:background="#000"></View>
-
-        <Button
-            android:layout_width="260dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:background="@drawable/blue_back"
-            android:onClick="signIn"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
-            android:text="Sign Up"
-            android:textColor="#FFFF" />
-    </LinearLayout>
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="60dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.417">
+
+            <TextView
+                android:id="@+id/loginAlert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#e62608" />
+
+            <EditText
+                android:id="@+id/usernameLogin"
+                android:layout_width="290dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_text_blue_border"
+                android:hint="@string/enter_phone_number"
+                android:inputType="phone"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp" />
+
+            <EditText
+                android:id="@+id/passwordLogin"
+                android:layout_width="290dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_text_blue_border"
+                android:hint="@string/enter_password"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp" />
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:background="@drawable/blue_back"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="@string/login"
+                android:textColor="#FFFF" />
+
+            <TextView
+                android:id="@+id/troubleLogin"
+                android:layout_width="249dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                android:text="@string/trouble_with_login"
+                android:textColor="#000"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
 </FrameLayout>

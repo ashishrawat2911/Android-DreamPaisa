@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.SignInFragment">
+    tools:context=".activities.SignUpActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,7 +79,6 @@
             android:paddingStart="10dp"
             android:singleLine="true" />
             -->
-
         <EditText
             android:id="@+id/phoneNumber"
             android:layout_width="290dp"

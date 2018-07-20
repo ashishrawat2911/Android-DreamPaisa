@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.rawat.ashish.game.R;
-import com.rawat.ashish.game.gameActivities.SpinWheelActivity;
+import com.rawat.ashish.game.activities.SpinWheelActivity;
 
 
 public class MainPlayEarnFragment extends Fragment {

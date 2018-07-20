@@ -25,7 +25,7 @@ public interface APIService {
     Call<UserDetails> getUser(@Query("user_id") String userId);
 
     @GET("login.php")
-    Call<Login> login(@Query("user_name") String userName, @Query("password") String userPassword);
+    Call<Login> login(@Query("mobile") String userName, @Query("password") String userPassword);
 
     @GET("update_cash_balance.php")
     Call<UpdatedBalance> updateReferCash(@Query("user_id") String userId, @Query("refer_cash") String referCash);
@@ -34,5 +34,5 @@ public interface APIService {
     Call<UpdatedBalance> updateEarnedCash(@Query("user_id") String userId, @Query("earned_cash") String earnedCash);
 
     @GET("update_cash_balance.php")
-    Call<UpdatedBalance> updateEarnedCash(@Query("user_id") String userId, @Query("refer_cash") String referCash, @Query("earned_cash") String earnedCash);
+    Call<UpdatedBalance> updateReferEarnedCash(@Query("user_id") String userId, @Query("refer_cash") String referCash, @Query("self_income") String earnedCash);
 }

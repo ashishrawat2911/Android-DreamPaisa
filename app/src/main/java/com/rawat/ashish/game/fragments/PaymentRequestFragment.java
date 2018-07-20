@@ -12,10 +12,10 @@ import com.rawat.ashish.game.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PaymentReportFragment extends Fragment {
+public class PaymentRequestFragment extends Fragment {
 
 
-    public PaymentReportFragment() {
+    public PaymentRequestFragment() {
         // Required empty public constructor
     }
 

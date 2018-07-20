@@ -1,5 +1,4 @@
-package com.rawat.ashish.game.fragments;
-
+package com.rawat.ashish.game.activities;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -8,17 +7,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.rawat.ashish.game.R;
-import com.rawat.ashish.game.activities.MainActivity;
 import com.rawat.ashish.game.constants.MyConstants;
 import com.rawat.ashish.game.model.User;
 import com.rawat.ashish.game.networks.APIClient;
@@ -28,11 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class SignInFragment extends Fragment {
+public class SignUpActivity extends AppCompatActivity {
     Button signInButton;
     AlertDialog alertDialog;
     EditText phoneNumber, firstName, lastName, userName, password, referralCodeEditText;
@@ -40,28 +33,25 @@ public class SignInFragment extends Fragment {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor sharedPreferencesEditor;
     ProgressDialog progress;
-
-    public SignInFragment() {
-        // Required empty public constructor
-    }
+    Spinner countrySpinner;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_sign_in, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sign_up);
         alertDialog = new AlertDialog.Builder(
-                getActivity()).create();
-        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                this).create();
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        signInButton = rootView.findViewById(R.id.signInButton);
-        phoneNumber = rootView.findViewById(R.id.phoneNumber);
-        firstName = rootView.findViewById(R.id.firstName);
-        password = rootView.findViewById(R.id.signInPassword);
-        lastName = rootView.findViewById(R.id.lastName);
-        userName = rootView.findViewById(R.id.userName);
-        referralCodeEditText = rootView.findViewById(R.id.referralCodeEditText);
+        signInButton = findViewById(R.id.signInButton);
+        phoneNumber = findViewById(R.id.phoneNumber);
+        firstName = findViewById(R.id.firstName);
+        password = findViewById(R.id.signInPassword);
+        lastName = findViewById(R.id.lastName);
+        userName = findViewById(R.id.userName);
+
+        referralCodeEditText = findViewById(R.id.referralCodeEditText);
         mAPIService = APIClient.getClient().create(APIService.class);
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,8 +67,6 @@ public class SignInFragment extends Fragment {
             }
 
         });
-
-        return rootView;
     }
 
 
@@ -97,7 +85,7 @@ public class SignInFragment extends Fragment {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 progress.dismiss();
-                Toast.makeText(getActivity(), response.body().getResult() + "\n" + response.body().getUserId(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this, response.body().getResult() + "\n" + response.body().getUserId(), Toast.LENGTH_SHORT).show();
 
                 checkResultStatus(response.body().getResult(), response.body().getUserId());
 
@@ -125,7 +113,7 @@ public class SignInFragment extends Fragment {
     }
 
     private void checkResultStatus(String status, String userId) {
-        Toast.makeText(getActivity(), status, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         switch (status) {
             case "User already exists":
                 AlertDialog("User already exists", "Please change the details", R.drawable.ic_action_cancel);
@@ -134,10 +122,10 @@ public class SignInFragment extends Fragment {
                 AlertDialog("Username already exists", "Please change the username", R.drawable.ic_action_cancel);
                 break;
             case "User Added Successfully":
-                startActivity(new Intent(getActivity(), MainActivity.class));
+                startActivity(new Intent(this, MainActivity.class));
                 setEveryThingToDefault();
                 setUserIdSharedPreferences(userId);
-                getActivity().finish();
+                this.finish();
                 break;
         }
     }
@@ -155,7 +143,7 @@ public class SignInFragment extends Fragment {
     }
 
     void loadProgressBar() {
-        progress = new ProgressDialog(getActivity());
+        progress = new ProgressDialog(this);
         progress.setMessage("Logging in");
         progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progress.setIndeterminate(true);
@@ -174,5 +162,3 @@ public class SignInFragment extends Fragment {
 
 
 }
-
-

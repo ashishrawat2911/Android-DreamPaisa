@@ -15,9 +15,9 @@
     <string name="empty_password_field">Password field is Empty</string>
     <string name="empty_username_and_password">UserName or Password field is Empty</string>
     <string name="username_or_password_incorrect">Username or password is in correct !</string>
-    <string name="earned_cash">Earned Cash</string>
+    <string name="self_income">Self Income</string>
     <string name="cash_earned_from_playing_games">Cash earned from playing Games</string>
-    <string name="enter_email_or_username">Enter Email or Username</string>
+
     <string name="enter_password">Enter Password</string>
     <string name="login">Login</string>
     <string name="trouble_with_login">Trouble with Login</string>
@@ -58,6 +58,8 @@
     <string name="daily_updates">Daily Updates</string>
     <string name="my_networks">My Networks</string>
     <string name="learn_to_use">Learn to use</string>
+    <string name="country_code">Country Code</string>
+    <string name="team_income">Team Income</string>
 
 
 </resources>

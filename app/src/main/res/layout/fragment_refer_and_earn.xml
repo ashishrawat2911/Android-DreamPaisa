@@ -18,7 +18,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/refer_and_earn" />
+                android:src="@drawable/ads" />
 
             <include layout="@layout/refer_code"></include>
         </LinearLayout>

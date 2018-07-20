@@ -6,5 +6,5 @@ public class MyConstants {
     public static final String USER_ID = "user_id";
     public static final String MY_REFERRAL_CODE = "my_referral_code";
     public static int SPLASH_TIME_OUT = 1000;
-
+    public static String Earned_POINTS = "earned_points";
 }

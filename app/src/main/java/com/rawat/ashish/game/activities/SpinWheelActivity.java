@@ -1,4 +1,4 @@
-package com.rawat.ashish.game.gameActivities;
+package com.rawat.ashish.game.activities;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -40,6 +40,7 @@ public class SpinWheelActivity extends AppCompatActivity {
         super.onBackPressed();
 
     }
+
 
     public void spinWheel(View view) {
         loadGif();

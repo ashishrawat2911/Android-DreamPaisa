@@ -12,7 +12,7 @@
     tools:showIn="@layout/fragment_wallet">
 
     <TextView
-        android:id="@+id/redeemCashTextView"
+        android:id="@+id/teamIncomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -20,32 +20,31 @@
         android:layout_marginStart="8dp"
         android:textColor="#000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/earnedCashDescTextView"
-        app:layout_constraintEnd_toEndOf="@+id/earnedCashDescTextView"
+        app:layout_constraintBottom_toTopOf="@+id/teamIncomeDescTextView"
+        app:layout_constraintEnd_toEndOf="@+id/teamIncomeDescTextView"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/earnedCashDescTextView" />
+        app:layout_constraintStart_toStartOf="@+id/teamIncomeDescTextView" />
 
     <TextView
-        android:id="@+id/earnedCashTitleTextView"
+        android:id="@+id/teamIncomeTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="@string/earned_cash"
+        android:text="@string/team_income"
         android:textColor="#000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/earnedCashDescTextView"
-        app:layout_constraintEnd_toEndOf="@+id/earnedCashDescTextView"
+        app:layout_constraintBottom_toTopOf="@+id/teamIncomeDescTextView"
+        app:layout_constraintEnd_toEndOf="@+id/teamIncomeDescTextView"
         app:layout_constraintHorizontal_bias="0.026"
-        app:layout_constraintStart_toStartOf="@+id/earnedCashDescTextView"
-        app:layout_constraintTop_toTopOf="@+id/redeemCashTextView"
+        app:layout_constraintStart_toStartOf="@+id/teamIncomeDescTextView"
+        app:layout_constraintTop_toTopOf="@+id/teamIncomeTextView"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/earnedCashDescTextView"
+        android:id="@+id/teamIncomeDescTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
-        android:text="@string/cash_earned_from_playing_games"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

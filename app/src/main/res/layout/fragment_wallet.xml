@@ -62,7 +62,9 @@
 
                 <include layout="@layout/refer_cash"></include>
 
-                <include layout="@layout/earned_cash"></include>
+                <include layout="@layout/self_income"></include>
+
+                <include layout="@layout/team_income"></include>
 
                 <include layout="@layout/offer_cash"></include>
             </LinearLayout>

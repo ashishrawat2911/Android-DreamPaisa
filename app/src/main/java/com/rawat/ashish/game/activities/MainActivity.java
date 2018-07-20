@@ -24,7 +24,7 @@ import com.rawat.ashish.game.fragments.MainPlayEarnFragment;
 import com.rawat.ashish.game.fragments.MyOrderFragment;
 import com.rawat.ashish.game.fragments.NetworkFragment;
 import com.rawat.ashish.game.fragments.NotificationFragment;
-import com.rawat.ashish.game.fragments.PaymentReportFragment;
+import com.rawat.ashish.game.fragments.PaymentRequestFragment;
 import com.rawat.ashish.game.fragments.ReferAndEarnFragment;
 import com.rawat.ashish.game.fragments.SupportFragment;
 import com.rawat.ashish.game.fragments.WalletFragment;
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity
                 fragmentTransaction(fragment);
                 break;
             case R.id.nav_payment_request:
-                fragment = new PaymentReportFragment();
+                fragment = new PaymentRequestFragment();
                 fragmentTransaction(fragment);
                 break;
             case R.id.nav_my_order:
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity
                 sharedPreferencesEditor = sharedPreferences.edit();
                 sharedPreferencesEditor.putBoolean(MyConstants.LOGGED_IN, false);
                 sharedPreferencesEditor.apply();
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                startActivity(new Intent(MainActivity.this, MainLoginActivity.class));
                 finish();
 
                 break;
@@ -144,20 +144,17 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         switch (id) {
             case 1:
-                fragment = new WalletFragment();
-                fragmentTransaction(fragment);
-
+                startActivity(new Intent(this, WalletActivity.class));
                 break;
             case 2:
 
                 break;
             case 3:
-                fragment = new MainPlayEarnFragment();
-                fragmentTransaction(fragment);
+                startActivity(new Intent(this, GameActivity.class));
                 break;
             case 4:
-                fragment = new ReferAndEarnFragment();
-                fragmentTransaction(fragment);
+                startActivity(new Intent(this, ReferAndEarnActivity.class));
+
                 break;
         }
     }

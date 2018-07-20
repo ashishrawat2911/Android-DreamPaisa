@@ -36,7 +36,7 @@ public class SplashActivity extends AppCompatActivity {
                 // Start your app main activity
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(SplashActivity.this);
                 if (!(sharedPreferences.getBoolean(MyConstants.LOGGED_IN, false))) {
-                    Intent i = new Intent(SplashActivity.this, LoginActivity.class);
+                    Intent i = new Intent(SplashActivity.this, MainLoginActivity.class);
                     startActivity(i);
                 } else {
                     Intent i = new Intent(SplashActivity.this, MainActivity.class);

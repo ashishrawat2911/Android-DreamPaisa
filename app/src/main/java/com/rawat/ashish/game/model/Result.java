@@ -41,6 +41,15 @@ public class Result {
     @SerializedName("created_on")
     @Expose
     private String createdOn;
+    @SerializedName("referral_code")
+    @Expose
+    private String referralCode;
+    @SerializedName("refer_cash")
+    @Expose
+    private String referCash;
+    @SerializedName("earned_cash")
+    @Expose
+    private String earnedCash;
     @SerializedName("is_active")
     @Expose
     private Object isActive;
@@ -147,6 +156,30 @@ public class Result {
         this.createdOn = createdOn;
     }
 
+    public String getReferralCode() {
+        return referralCode;
+    }
+
+    public void setReferralCode(String referralCode) {
+        this.referralCode = referralCode;
+    }
+
+    public String getReferCash() {
+        return referCash;
+    }
+
+    public void setReferCash(String referCash) {
+        this.referCash = referCash;
+    }
+
+    public String getEarnedCash() {
+        return earnedCash;
+    }
+
+    public void setEarnedCash(String earnedCash) {
+        this.earnedCash = earnedCash;
+    }
+
     public Object getIsActive() {
         return isActive;
     }
@@ -170,5 +203,6 @@ public class Result {
     public void setSocialId(String socialId) {
         this.socialId = socialId;
     }
+
 
 }
