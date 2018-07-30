@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".activities.PaymentRequestActivity">
+    <Button
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/blue_back"
+        android:onClick="inAccount"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:text="@string/in_account"
+        android:textColor="#FFFF" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#000"/>
+
+    <Button
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/blue_back"
+        android:onClick="payTm"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:text="@string/paytm"
+        android:textColor="#FFFF" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#000"/>
+
+    <Button
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/blue_back"
+        android:onClick="payPal"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:text="@string/paypal"
+        android:textColor="#FFFF" />
+</LinearLayout>

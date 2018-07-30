@@ -11,13 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.rawat.ashish.game.R;
 import com.rawat.ashish.game.constants.MyConstants;
 import com.rawat.ashish.game.model.Login;
 import com.rawat.ashish.game.networks.APIClient;
 import com.rawat.ashish.game.networks.APIService;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -108,7 +106,6 @@ public class LoginActivity extends AppCompatActivity {
     private void setEveryThingToDefault() {
         setTextIntoEditText(loginEditText);
         setTextIntoEditText(passwordEditText);
-
     }
 
 

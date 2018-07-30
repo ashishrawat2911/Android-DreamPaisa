@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.rawat.ashish.game.R;
 import com.rawat.ashish.game.constants.MyConstants;
+import com.rawat.ashish.game.model.UpdatedBalance;
 import com.rawat.ashish.game.model.UserDetails;
 import com.rawat.ashish.game.networks.APIClient;
 import com.rawat.ashish.game.networks.APIService;
@@ -41,13 +42,14 @@ public class WalletActivity extends AppCompatActivity {
         redeemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent redeemIntent = new Intent(WalletActivity.this, WithDrawActivity.class);
+                Intent redeemIntent = new Intent(WalletActivity.this, PaymentRequestActivity.class);
                 startActivity(redeemIntent);
             }
         });
         apiService = APIClient.getClient().create(APIService.class);
-        loadProgressBar();
-        loadData();
+       // loadProgressBar();
+        //updateEarnedCash(sharedPreferences.getInt(MyConstants.Earned_POINTS, 0));
+
     }
 
     private void loadData() {
@@ -63,6 +65,23 @@ public class WalletActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<UserDetails> call, Throwable t) {
                 progress.dismiss();
+                Toast.makeText(WalletActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void updateEarnedCash(float a) {
+        Toast.makeText(WalletActivity.this, a/100+"", Toast.LENGTH_SHORT).show();
+
+        apiService.updateEarnedCash(sharedPreferences.getString(MyConstants.USER_ID, null), String.valueOf(a/100)).enqueue(new Callback<UpdatedBalance>() {
+            @Override
+            public void onResponse(Call<UpdatedBalance> call, Response<UpdatedBalance> response) {
+                Toast.makeText(WalletActivity.this, response.body().getResult(), Toast.LENGTH_SHORT).show();
+                loadData();
+            }
+
+            @Override
+            public void onFailure(Call<UpdatedBalance> call, Throwable t) {
                 Toast.makeText(WalletActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

@@ -42,9 +42,13 @@
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity android:name=".activities.SignUpActivity" />
         <activity android:name=".activities.GameActivity" />
-        <activity android:name=".activities.LoginActivity"></activity>
+        <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.WalletActivity" />
         <activity android:name=".activities.ReferAndEarnActivity" />
+        <activity android:name=".activities.PaymentRequestActivity" />
+        <activity android:name=".activities.InAccountActivity" />
+        <activity android:name=".activities.PayTmActivity" />
+        <activity android:name=".activities.PayPalActivity"/>
     </application>
 
 </manifest>

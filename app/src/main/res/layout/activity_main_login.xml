@@ -27,7 +27,7 @@
             android:onClick="login"
             android:paddingEnd="8dp"
             android:paddingStart="8dp"
-            android:text="Login"
+            android:text="@string/login"
             android:textColor="#FFFF" />
 
         <View
@@ -35,7 +35,7 @@
             android:layout_height="5dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:background="#000"></View>
+            android:background="#000"/>
 
         <Button
             android:layout_width="260dp"
@@ -46,7 +46,7 @@
             android:onClick="signIn"
             android:paddingEnd="8dp"
             android:paddingStart="8dp"
-            android:text="Sign Up"
+            android:text="@string/sign_up"
             android:textColor="#FFFF" />
     </LinearLayout>
 </FrameLayout>

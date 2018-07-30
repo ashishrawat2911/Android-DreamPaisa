@@ -30,7 +30,7 @@
     <string name="enter_phone_number">Enter Phone Number</string>
     <string name="do_you_have_a_referral_code">Do you have a referral code ?</string>
     <string name="enter_referral_code">Enter Referral Code</string>
-    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
     <string name="redeem">Redeem</string>
     <string name="offer_cash">Offer Cash</string>
     <string name="cash_earned_from_offers">Cash earned from Offers</string>
@@ -60,6 +60,17 @@
     <string name="learn_to_use">Learn to use</string>
     <string name="country_code">Country Code</string>
     <string name="team_income">Team Income</string>
+    <string name="in_account">In Account</string>
+    <string name="paytm">PayTm</string>
+    <string name="paypal">Pay Pal</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="enter_holder_name">Enter Holder Name</string>
+    <string name="enter_Account_number">Enter Account No.</string>
+    <string name="enter_ifsc_code">Enter IFSC Code</string>
+    <string name="enter_bank_name">Enter Bank Name</string>
+    <string name="send_request">Send Request</string>
+    <string name="enter_paytm_no">Enter PayTm No.</string>
+    <string name="enter_paypal_no">Enter PayPal email</string>
 
 
 </resources>

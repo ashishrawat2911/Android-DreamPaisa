@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SignUpActivity">
+    tools:context=".activities.InAccountActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,120 +13,85 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/userName"
+            android:id="@+id/inAccountAmount"
             android:layout_width="290dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_blue_border"
             android:focusable="true"
-            android:hint="@string/enter_user_name"
+            android:hint="@string/enter_amount"
             android:inputType="text"
             android:paddingEnd="10dp"
             android:paddingStart="10dp"
             android:singleLine="true" />
 
         <EditText
-            android:id="@+id/firstName"
+            android:id="@+id/inAccountHolderName"
             android:layout_width="290dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_blue_border"
             android:focusable="true"
-            android:hint="@string/enter_first_name"
+            android:hint="@string/enter_holder_name"
             android:inputType="text"
             android:paddingEnd="10dp"
             android:paddingStart="10dp"
             android:singleLine="true" />
 
         <EditText
-            android:id="@+id/lastName"
+            android:id="@+id/inAccountAccountNo"
             android:layout_width="290dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_blue_border"
             android:focusable="true"
-            android:hint="@string/enter_last_name"
+            android:hint="@string/enter_Account_number"
             android:inputType="text"
             android:paddingEnd="10dp"
             android:paddingStart="10dp"
             android:singleLine="true" />
 
         <EditText
-            android:id="@+id/signInPassword"
+            android:id="@+id/inAccountIFSCCode"
             android:layout_width="290dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_blue_border"
-            android:hint="@string/enter_password"
+            android:hint="@string/enter_ifsc_code"
             android:inputType="textPassword"
             android:paddingEnd="10dp"
             android:paddingStart="10dp"
             android:singleLine="true" />
-        <!--
+
         <EditText
-            android:id="@+id/signInRePassword"
+            android:id="@+id/inAccountBankName"
             android:layout_width="290dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_blue_border"
-            android:hint="Re-enter Password"
-            android:paddingEnd="10dp"
-            android:paddingStart="10dp"
-            android:singleLine="true" />
-            -->
-        <EditText
-            android:id="@+id/phoneNumber"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:background="@drawable/edit_text_blue_border"
-            android:hint="@string/enter_phone_number"
+            android:hint="@string/enter_bank_name"
             android:inputType="phone"
             android:paddingEnd="10dp"
             android:paddingStart="10dp"
             android:singleLine="true" />
 
-        <TextView
-            android:id="@+id/referralSignInCodeTextView"
-            android:layout_width="249dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:layout_marginBottom="12dp"
-            android:gravity="center"
-            android:text="@string/do_you_have_a_referral_code"
-            android:textColor="#000"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/referralCodeEditText"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:background="@drawable/edit_text_blue_border"
-            android:hint="@string/enter_referral_code"
-            android:inputType="phone"
-            android:paddingEnd="10dp"
-            android:paddingStart="10dp"
-            android:singleLine="true" />
 
         <Button
-            android:id="@+id/signInButton"
+            android:id="@+id/inAccountButton"
             android:layout_width="260dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/blue_back"
             android:paddingEnd="8dp"
+            android:onClick="sendRequestInAccount"
             android:paddingStart="8dp"
-            android:text="@string/sign_up"
+            android:text="@string/send_request"
             android:textColor="#FFFF" />
     </LinearLayout>
 

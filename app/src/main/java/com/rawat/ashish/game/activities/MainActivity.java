@@ -13,6 +13,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rawat.ashish.game.R;
 import com.rawat.ashish.game.constants.MyConstants;
@@ -20,20 +24,26 @@ import com.rawat.ashish.game.fragments.AdvertiseWithUsFragment;
 import com.rawat.ashish.game.fragments.BestOffersFragment;
 import com.rawat.ashish.game.fragments.HomeFragment;
 import com.rawat.ashish.game.fragments.HomeMainFragment;
-import com.rawat.ashish.game.fragments.MainPlayEarnFragment;
 import com.rawat.ashish.game.fragments.MyOrderFragment;
 import com.rawat.ashish.game.fragments.NetworkFragment;
 import com.rawat.ashish.game.fragments.NotificationFragment;
-import com.rawat.ashish.game.fragments.PaymentRequestFragment;
-import com.rawat.ashish.game.fragments.ReferAndEarnFragment;
 import com.rawat.ashish.game.fragments.SupportFragment;
-import com.rawat.ashish.game.fragments.WalletFragment;
+import com.rawat.ashish.game.model.UserDetails;
+import com.rawat.ashish.game.networks.APIClient;
+import com.rawat.ashish.game.networks.APIService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, HomeMainFragment.OnButtonClickListener {
     Fragment fragment = null;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor sharedPreferencesEditor;
+    TextView username, userId, number;
+    ProgressBar progressBar;
+    APIService mAPIService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,17 +51,37 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mAPIService = APIClient.getClient().create(APIService.class);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        userId = headerView.findViewById(R.id.nav_header_userId);
+        username = headerView.findViewById(R.id.nav_header_userName);
+        number = headerView.findViewById(R.id.nav_header_userNumber);
+        progressBar = headerView.findViewById(R.id.nav_header_progressBar);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.getMenu().getItem(0).setChecked(true);
         fragmentTransaction(new HomeFragment());
+        if (sharedPreferences.getInt(MyConstants.LOAD_USER_PROFILE, 0) == 1) {
+            setUserProfile();
+        } else loadProfileData();
+    }
+
+    private void setUserProfile() {
+        userId.setVisibility(View.VISIBLE);
+        username.setVisibility(View.VISIBLE);
+        number.setVisibility(View.VISIBLE);
+        userId.setText("User Id : " + sharedPreferences.getString(MyConstants.USER_ID, ""));
+        username.setText(sharedPreferences.getString(MyConstants.USER_NAME, ""));
+        number.setText(sharedPreferences.getString(MyConstants.NUMBER, ""));
+        progressBar.setVisibility(View.GONE);
+
     }
 
     @Override
@@ -81,8 +111,7 @@ public class MainActivity extends AppCompatActivity
                 fragmentTransaction(fragment);
                 break;
             case R.id.nav_payment_request:
-                fragment = new PaymentRequestFragment();
-                fragmentTransaction(fragment);
+                startActivity(new Intent(MainActivity.this, PaymentRequestActivity.class));
                 break;
             case R.id.nav_my_order:
                 fragment = new MyOrderFragment();
@@ -105,24 +134,22 @@ public class MainActivity extends AppCompatActivity
                 fragmentTransaction(fragment);
                 break;
             case R.id.nav_wallet:
-                fragment = new WalletFragment();
-                fragmentTransaction(fragment);
+                startActivity(new Intent(MainActivity.this, WalletActivity.class));
                 break;
             case R.id.nav_refer_and_earn:
-                fragment = new ReferAndEarnFragment();
-                fragmentTransaction(fragment);
+                startActivity(new Intent(MainActivity.this, ReferAndEarnActivity.class));
                 break;
             case R.id.nav_game:
-                fragment = new MainPlayEarnFragment();
-                fragmentTransaction(fragment);
+                startActivity(new Intent(MainActivity.this, GameActivity.class));
                 break;
             case R.id.nav_logout:
                 sharedPreferencesEditor = sharedPreferences.edit();
                 sharedPreferencesEditor.putBoolean(MyConstants.LOGGED_IN, false);
+                sharedPreferencesEditor.putInt(MyConstants.LOAD_USER_PROFILE, 0);
+                sharedPreferencesEditor.putInt(MyConstants.Earned_POINTS,0);
                 sharedPreferencesEditor.apply();
                 startActivity(new Intent(MainActivity.this, MainLoginActivity.class));
                 finish();
-
                 break;
         }
 
@@ -157,5 +184,32 @@ public class MainActivity extends AppCompatActivity
 
                 break;
         }
+    }
+
+    private void loadProfileData() {
+        mAPIService.getUser(sharedPreferences.getString(MyConstants.USER_ID, null)).enqueue(new Callback<UserDetails>() {
+            @Override
+            public void onResponse(Call<UserDetails> call, Response<UserDetails> response) {
+                setUserProfileSharedPreferences(response.body().getResult().getMobile(),
+                        response.body().getResult().getFirstName() + " " + response.body().getResult().getLastName(),
+                        response.body().getResult().getReferralCode());
+                Toast.makeText(MainActivity.this, response.body().getResult().getMobile() + "\n" + response.body().getResult().getFirstName() + " " + response.body().getResult().getLastName(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<UserDetails> call, Throwable t) {
+                Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void setUserProfileSharedPreferences(String mobile, String s, String referralCode) {
+        sharedPreferencesEditor = sharedPreferences.edit();
+        sharedPreferencesEditor.putString(MyConstants.USER_NAME, s);
+        sharedPreferencesEditor.putString(MyConstants.NUMBER, mobile);
+        sharedPreferencesEditor.putInt(MyConstants.LOAD_USER_PROFILE, 1);
+        sharedPreferencesEditor.putString(MyConstants.MY_REFERRAL_CODE, referralCode);
+        sharedPreferencesEditor.apply();
+        setUserProfile();
     }
 }

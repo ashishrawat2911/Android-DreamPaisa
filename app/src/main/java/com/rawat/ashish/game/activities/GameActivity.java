@@ -11,19 +11,13 @@ import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rawat.ashish.game.R;
 import com.rawat.ashish.game.constants.MyConstants;
-import com.rawat.ashish.game.model.UpdatedBalance;
 import com.rawat.ashish.game.networks.APIClient;
 import com.rawat.ashish.game.networks.APIService;
 
 import java.util.Random;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class GameActivity extends AppCompatActivity {
     private static final float fac = 36;
@@ -32,6 +26,7 @@ public class GameActivity extends AppCompatActivity {
     ImageView wheel;
     TextView result, totalResult;
     Random r;
+    TextView redeem;
     int degree = 0;
     int degree_old = 0;
     int totalcoins = 0;
@@ -44,12 +39,13 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        totalResult = findViewById(R.id.totalResult2);
+        totalResult = findViewById(R.id.totalResult);
+        redeem = findViewById(R.id.redeemResult);
         button = (Button) findViewById(R.id.spinGameButton);
         wheel = (ImageView) findViewById(R.id.spinGameImageView);
         result = (TextView) findViewById(R.id.spinResultTextView);
         mAPIService = APIClient.getClient().create(APIService.class);
-
+        setTotalPoints();
         r = new Random();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +64,7 @@ public class GameActivity extends AppCompatActivity {
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        int a = currentno(360 - (degree % 360));
+                        int a = currentNo(360 - (degree % 360));
                         updateSEarnedCash(a);
                         result.setText("Result:" + a);
                         totalcoins += a / 100;
@@ -97,28 +93,12 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
-    private void updateEarnedCash(String a) {
-        mAPIService.updateEarnedCash(sharedPreferences.getString(MyConstants.USER_ID, null), a).enqueue(new Callback<UpdatedBalance>() {
-            @Override
-            public void onResponse(Call<UpdatedBalance> call, Response<UpdatedBalance> response) {
-                Toast.makeText(GameActivity.this, response.body().getResult(), Toast.LENGTH_SHORT).show();
-
-
-            }
-
-            @Override
-            public void onFailure(Call<UpdatedBalance> call, Throwable t) {
-                Toast.makeText(GameActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
     public void setTotalPoints() {
         totalResult.setText(sharedPreferences.getInt(MyConstants.Earned_POINTS, 0) + " Points");
-
     }
 
-    private int currentno(int degrees) {
+    private int currentNo(int degrees) {
         int text = 0;
 
         if (degrees >= 0 && degrees < fac) {

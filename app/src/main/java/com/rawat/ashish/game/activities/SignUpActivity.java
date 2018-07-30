@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.rawat.ashish.game.R;
 import com.rawat.ashish.game.constants.MyConstants;
 import com.rawat.ashish.game.model.User;
+import com.rawat.ashish.game.model.UserDetails;
 import com.rawat.ashish.game.networks.APIClient;
 import com.rawat.ashish.game.networks.APIService;
 
@@ -158,7 +159,9 @@ public class SignUpActivity extends AppCompatActivity {
         sharedPreferencesEditor = sharedPreferences.edit();
         sharedPreferencesEditor.putString(MyConstants.USER_ID, userId);
         sharedPreferencesEditor.apply();
+
     }
+
 
 
 }
