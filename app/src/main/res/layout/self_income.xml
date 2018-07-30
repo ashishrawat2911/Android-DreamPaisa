@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
     android:background="#ffff"
     android:paddingEnd="20dp"
     android:paddingStart="20dp"
-    android:paddingTop="20dp"
+
     tools:showIn="@layout/fragment_wallet">
 
     <TextView
@@ -19,7 +19,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:textColor="#000"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/selfIncomeDescTextView"
         app:layout_constraintEnd_toEndOf="@+id/selfIncomeDescTextView"
         app:layout_constraintHorizontal_bias="1.0"
@@ -32,7 +32,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/self_income"
         android:textColor="#000"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/selfIncomeDescTextView"
         app:layout_constraintEnd_toEndOf="@+id/selfIncomeDescTextView"
         app:layout_constraintHorizontal_bias="0.026"

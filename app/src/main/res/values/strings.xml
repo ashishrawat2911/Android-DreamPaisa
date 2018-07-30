@@ -32,11 +32,11 @@
     <string name="enter_referral_code">Enter Referral Code</string>
     <string name="sign_up">Sign Up</string>
     <string name="redeem">Redeem</string>
-    <string name="offer_cash">Offer Cash</string>
+    <string name="stages">Stage</string>
     <string name="cash_earned_from_offers">Cash earned from Offers</string>
     <string name="redeem_cash">Redeem Cash</string>
     <string name="cash_you_have_redeemed">Cash you have redeemed</string>
-    <string name="refer_cash">Refer Cash</string>
+    <string name="refer_earning">Referral Earning</string>
     <string name="share_your_referral_code">Share Your Referral Code</string>
     <string name="invite_friends">Invite friends</string>
     <string name="your_referral_code">Your Referral Code</string>
@@ -59,7 +59,7 @@
     <string name="my_networks">My Networks</string>
     <string name="learn_to_use">Learn to use</string>
     <string name="country_code">Country Code</string>
-    <string name="team_income">Team Income</string>
+    <string name="redeemable_amount">Redeemable Amount</string>
     <string name="in_account">In Account</string>
     <string name="paytm">PayTm</string>
     <string name="paypal">Pay Pal</string>

@@ -64,9 +64,20 @@
 
                 <include layout="@layout/self_income"></include>
 
-                <include layout="@layout/team_income"></include>
+                <include layout="@layout/redeemable_amount"></include>
 
-                <include layout="@layout/offer_cash"></include>
+                <include layout="@layout/stages"></include>
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/info"
+                    android:textColor="#000"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text=" Redeem Stages:\n1.Self Income = Rs.20     You can redeem Rs.20\n2.Self Income = Rs.200   You can redeem Rs.100\n3.Self Income = Rs.500   You can redeem Rs.200\n4.Self Income = Rs.1000 You can redeem Rs.300 " />
             </LinearLayout>
         </ScrollView>
     </android.support.constraint.ConstraintLayout>

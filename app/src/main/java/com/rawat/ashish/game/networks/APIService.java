@@ -29,18 +29,12 @@ public interface APIService {
     Call<Login> login(@Query("mobile") String userName,
                       @Query("password") String userPassword);
 
-    @GET("update_cash_balance.php")
-    Call<UpdatedBalance> updateReferCash(@Query("user_id") String userId,
-                                         @Query("refer_cash") String referCash);
 
     @GET("update_cash_balance.php")
-    Call<UpdatedBalance> updateEarnedCash(@Query("user_id") String userId,
-                                          @Query("earned_cash") String earnedCash);
-
-    @GET("update_cash_balance.php")
-    Call<UpdatedBalance> updateReferEarnedCash(@Query("user_id") String userId,
+    Call<UpdatedBalance> updateCash(@Query("user_id") String userId,
                                                @Query("refer_cash") String referCash,
-                                               @Query("self_income") String earnedCash);
+                                               @Query("earned_cash") String earnedCash,
+                                               @Query("net_balance") String netBalance);
 
     @GET("add_payment_request.php")
     Call<PaymentRequest> inAccountPaymentRequest(@Query("user_id") String userId,
@@ -48,11 +42,13 @@ public interface APIService {
                                                  @Query("account_number") String accountNumber,
                                                  @Query("ifsc") String iFSCCode,
                                                  @Query("bank_name") String bankName);
+
     @GET("add_payment_request.php")
     Call<PaymentRequest> payTmPaymentRequest(@Query("user_id") String userId,
                                              @Query("paytm") String payTm);
+
     @GET("add_payment_request.php")
     Call<PaymentRequest> payPalPaymentRequest(@Query("user_id") String userId,
-                                             @Query("paypal_email") String payTm);
+                                              @Query("paypal_email") String payTm);
 
 }
