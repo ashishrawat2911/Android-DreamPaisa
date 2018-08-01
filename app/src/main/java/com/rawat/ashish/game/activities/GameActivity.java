@@ -194,6 +194,28 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to exit?").setIcon(R.drawable.back_icon)
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        GameActivity.this.finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+
+    }
+
+
+
     void AlertDialog(String title, String message) {
         alertDialog.setTitle(title);
         alertDialog.setMessage(message);
@@ -204,6 +226,7 @@ public class GameActivity extends AppCompatActivity {
             }
         });
         alertDialog.show();
+
     }
 
     private void updateCash() {
