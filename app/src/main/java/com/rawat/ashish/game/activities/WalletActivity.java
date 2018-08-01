@@ -77,13 +77,14 @@ public class WalletActivity extends AppCompatActivity {
                             Selfinc = Selfinc.add(Earn);
                             Earn = BigDecimal.ZERO;
                             updateCash(Refern.toString(), Earn.toString(), Selfinc.toString());
-
+                            loadUserDetails();
                             Log.d("Wallet Activity", "onDataAvailable: " + Refern + "  " + Earn + "  " + Selfinc);
                         } else if (Refern.compareTo(Earn) < 0) {//edit refer
                             Selfinc = Selfinc.add(Refern);
                             Refern = BigDecimal.ZERO;
                             Earn = BigDecimal.ZERO;
                             updateCash(Refern.toString(), Earn.toString(), Selfinc.toString());
+                            loadUserDetails();
                             Log.d("Wallet Activity", "onDataAvailable: " + Refern + "  " + Earn + "  " + Selfinc);
                             //send editted parameters
 
@@ -93,7 +94,7 @@ public class WalletActivity extends AppCompatActivity {
                     } else {
 
                         referCash.setText("Rs." + response.body().getResult().getReferCash());
-                        selfIncome.setText("Rs." + response.body().getResult().getEarnedCash());
+                        selfIncome.setText("Rs." + response.body().getResult().getNetBalance());
                         stages.setText("Stage:" + response.body().getResult().getStage());
 
                         if (Stage == 1 && Selfinc.compareTo(new BigDecimal(20)) >= 0) {
@@ -112,8 +113,7 @@ public class WalletActivity extends AppCompatActivity {
                             redeemableAmount.setText("Rs.300");
                             go = 1;
                             redeemamt = new BigDecimal("300");
-                        }
-                        else redeemableAmount.setText("Rs 0");
+                        } else redeemableAmount.setText("Rs 0");
                         if (go == 1) {
                             redeemButton.setEnabled(true);
                         }
@@ -140,7 +140,6 @@ public class WalletActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<UpdatedBalance> call, Response<UpdatedBalance> response) {
                 Toast.makeText(WalletActivity.this, response.body().getResult(), Toast.LENGTH_SHORT).show();
-                loadUserDetails();
             }
 
             @Override
@@ -155,7 +154,7 @@ public class WalletActivity extends AppCompatActivity {
         progress.setMessage("Loading data");
         progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progress.setIndeterminate(true);
-        progress.setCancelable(false);
+
         progress.show();
 
     }

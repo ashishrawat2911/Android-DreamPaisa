@@ -10,4 +10,5 @@ public class MyConstants {
     public static final String LOAD_USER_PROFILE = "load_user_profile";
     public static int SPLASH_TIME_OUT = 1000;
     public static String Earned_POINTS = "earned_points";
+
 }
